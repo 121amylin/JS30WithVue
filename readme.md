@@ -47,9 +47,9 @@ currentTime 屬性設置或返回音頻/視頻播放的當前位置（以秒計�
 
 ## 04 - Array Cardio Day 1
 
-
-
 sort()內部的function回傳負數或0不會替換位置；回傳正數才會替換位置
+
+[Array.prototype.reduce() - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 
 ****
 
