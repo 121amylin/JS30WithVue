@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Scoped CSS Variables and JS</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+    <h3>Update CSS Variables with <span class="hl">JS</span></h3>
 
-    <div class="controls">
+    <div class="controls" id="app">
       <label for="spacing">Spacing:</label>
       <input
         id="spacing"
         type="range"
         name="spacing"
-        min="10"
-        max="200"
-        value="10"
-        data-sizing="px"
+        min="0"
+        max="30"
+        v-model="spacingValue"
       />
 
       <label for="blur">Blur:</label>
@@ -25,42 +25,19 @@
         type="range"
         name="blur"
         min="0"
-        max="25"
-        value="10"
-        data-sizing="px"
+        max="10"
+        v-model="blurValue"
       />
 
       <label for="base">Base Color</label>
-      <input id="base" type="color" name="base" value="#ffc600" />
+      <input id="base" type="color" name="base" v-model='bgColor' />
+      <img class="pic"
+        src="https://source.unsplash.com/7bwQXzbF6KE/800x440"
+        :style="style"
+      />
     </div>
 
-    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
-
-    <style>
-      /*
-      misc styles, nothing to do with CSS variables
-    */
-
-      body {
-        text-align: center;
-        background: #193549;
-        color: white;
-        font-family: "helvetica neue", sans-serif;
-        font-weight: 100;
-        font-size: 50px;
-      }
-
-      .controls {
-        margin-bottom: 50px;
-      }
-
-      input {
-        width: 100px;
-      }
-    </style>
-    <script
-      src="../common/vue.js"
-    ></script>
-    <script></script>
+    <script src="../common/vue.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

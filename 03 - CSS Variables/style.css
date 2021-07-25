@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-family: "helvetica neue", sans-serif;
+  font-weight: 100;
+  font-size: 34px;
+}
+h3{
+  margin-bottom: 26px;
+}
+.controls {
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100px;
+}
+.pic{
+  margin-top: 44px;
+}
