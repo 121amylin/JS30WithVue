@@ -39,13 +39,17 @@ currentTime 屬性設置或返回音頻/視頻播放的當前位置（以秒計�
 
 ## 03 - CSS Variables
 
+["Variables" | Can I use... Support tables for HTML5, CSS3, etc](https://caniuse.com/?search=Variables)
 
+[unsplash_pictureUrl](https://source.unsplash.com/)
 
 ***
 
 ## 04 - Array Cardio Day 1
 
 
+
+sort()內部的function回傳負數或0不會替換位置；回傳正數才會替換位置
 
 ****
 
