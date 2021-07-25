@@ -31,7 +31,9 @@ currentTime 屬性設置或返回音頻/視頻播放的當前位置（以秒計�
 
 ## 02 - JS and CSS Clock
 
+[css - vueJS transform rotate style inline - Stack Overflow](https://stackoverflow.com/questions/48381670/vuejs-transform-rotate-style-inline)
 
+[Vue mounted方法中使用data变量](https://blog.csdn.net/VcStrong/article/details/89917172)
 
 ****
 
