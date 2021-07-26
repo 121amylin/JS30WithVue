@@ -59,7 +59,33 @@ sort()內部的function回傳負數或0不會替換位置；回傳正數才會�
 
 ## 06 - Type Ahead
 
+[regex101](https://regex101.com/)
+
+[正規表示式 - 線上產生器](https://cloudlab.tw/wp/sampleFiles/RegExp/)
+
+fetch  沒有支援progress
+
+pure function 不改變傳進去東西和他自己的東西，回傳產出的東西（工具型的函式）
+
+replace  VS RegExp  差別 RegExp 可以設置g  i ....
+
+toLocaleString()
+
+​/\B(?=(\d{3})+(?!\d))/g
+
+/\Be/g前面要有東西    /e\B/g後面要有東西   /\Be\B/g前後面要有東西  ；​\b是單字的最左和最右，\B就相反不能是最左最右
+
+()小括號是群組；{}大括號是要有幾次；+至少一次
+
+[正则表达式案例分析 （一）](https://gitee.com/janking/Infinite-f2e/issues/IDWPH)
+
+[電子書](https://zhuanlan.zhihu.com/p/27653434)
+
+[regexper.com](https://regexper.com/)
+
 ***
+
+
 
 ## 07 - Array Cardio Day 2
 
