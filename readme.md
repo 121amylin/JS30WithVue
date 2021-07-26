@@ -4,8 +4,6 @@
 
 [GitHub - wesbos/JavaScript30: 30 Day Vanilla JS Challenge](https://github.com/wesbos/JavaScript30)
 
-
-
 ****
 
 ## 01 - JavaScript Drum Kit
@@ -24,8 +22,6 @@ currentTime 屬性設置或返回音頻/視頻播放的當前位置（以秒計�
 [vue组件中如何给div绑定keydown等键盘事件 · Issue #8981 · vuejs/vue · GitHub](https://github.com/vuejs/vue/issues/8981)
 
 ([vue.js中内联样式style、class三元表达式_人间草木-CSDN博客_vue中class三元表达式](https://blog.csdn.net/qq_43258252/article/details/86677256))
-
-
 
 ****
 
@@ -55,151 +51,105 @@ sort()內部的function回傳負數或0不會替換位置；回傳正數才會�
 
 ## 05 - Flex Panel Gallery
 
+[突然間的思考（一）：setTimeout究竟需不需要執行完進行clearTimeout?你開心就好...](https://juejin.cn/post/6844903937238106126)
 
+[你所不知道的setTimeout | 晚晴幽草轩](https://www.jeffjade.com/2016/01/10/2016-01-10-javacript-setTimeout/)
 
 ****
 
 ## 06 - Type Ahead
 
-
-
 ***
 
 ## 07 - Array Cardio Day 2
-
-
 
 ***
 
 ## 08 - Fun with HTML5 Canvas
 
-
-
 ***
 
 ## 09 - Dev Tools Domination
-
-
 
 ****
 
 ## 10 - Hold Shift and Check Checkboxes
 
-
-
 ****
 
 ## 11 - Custom Video Player
-
-
 
 ****
 
 ## 12 - Key Sequence Detection
 
-
-
 ***
 
 ## 13 - Slide in on Scroll
-
-
 
 ***
 
 ## 14 - JavaScript References VS Copying
 
-
-
 ****
 
 ## 15 - LocalStorage
-
-
 
 ****
 
 ## 16 - Mouse Move Shadow
 
-
-
 ****
 
 ## 17 - Sort Without Articles
-
-
 
 ****
 
 ## 18 - Adding Up Times with Reduce
 
-
-
 *****
 
 ## 19 - Webcam Fun
-
-
 
 ******
 
 ## 20 - Speech Detection
 
-
-
 *******
 
 ## 21 - Geolocation
-
-
 
 ******
 
 ## 22 - Follow Along Link Highlighter
 
-
-
 ******
 
 ## 23 - Speech Synthesis
-
-
 
 ******
 
 ## 24 - Sticky Nav
 
-
-
 ****
 
 ## 25 - Event Capture, Propagation, Bubbling and Once
-
-
 
 *****
 
 ## 26 - Stripe Follow Along Nav
 
-
-
 *******
 
 ## 27 - Click and Drag
-
-
 
 *******
 
 ## 28 - Video Speed Controller
 
-
-
 **********
 
 ## 29 - Countdown Timer
-
-
 
 ********
 
