@@ -267,6 +267,54 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
 
 ## 13 - Slide in on Scroll
 
+debounce做計時器的包裝(延遲)
+
+call 、apply，傳遞參數的差別
+
+閉包觀念
+
+```javascript
+ //debounce =>好處可以讓事件觸發不會過於頻繁；缺點是可能導致效果延遲使用體驗驗卡頓      
+ function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+```
+
+捲軸相關事件：scroll 卷軸、mousewhell 滑鼠滾輪
+
+window.scrollTop(X,Y)  、scrollY、scrollTop
+
+```javascript
+let windowTop=window.scrollY;
+let windowBottom=windowTop+window.innerHeight;
+let img document.querySelector('img')
+if(img.offsetTop<windowBottom){   //頭進來，看到比較少的動畫過程
+    img.classList.add('active')
+}
+
+if(img.offsetTop+img.height <windowBottom){   //屁股進來，看到很多留白
+    img.classList.add('active')
+}
+if(img.offsetTop+img.height/2 <windowBottom){   //肚子進來，適中
+    img.classList.add('active')
+}
+```
+
+
+
+
+
 ***
 
 ## 14 - JavaScript References VS Copying
