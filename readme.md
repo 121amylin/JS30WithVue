@@ -85,8 +85,6 @@ toLocaleString()
 
 ***
 
-
-
 ## 07 - Array Cardio Day 2
 
 Array.prototype.some()、Array.prototype.every()、 Array.prototype.find()、Array.prototype.findIndex() 使用、解構附值
@@ -97,10 +95,10 @@ Array.prototype.some()、Array.prototype.every()、 Array.prototype.find()、Arr
 
 [CanvasRenderingContext2D.globalCompositeOperation 混合模式操作 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
 
-
 ***
 
 ## 09 - Dev Tools Domination
+
 [瀏覽器console.log()外的一些其他用法](https://ithelp.ithome.com.tw/articles/10209871)
 
 - %d表示數位數字(digital)
@@ -111,6 +109,7 @@ Array.prototype.some()、Array.prototype.every()、 Array.prototype.find()、Arr
 ```javascript=
 console.log("%cHello %cWorld", "color:red;", "color:blue;background:yellow")
 ```
+
 [JavaScript中不得不說的斷言?](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/668729/)
 
 console.dir()在中顯示顯示指定 JavaScript 對象的屬性時，還通過文件樹樣式的交互列表顯示。(會列出class和ID的值)
@@ -161,30 +160,82 @@ console.count 計數
     console.count('Steve');
     console.count('Steve');
     console.count('Steve');
-
 ```
 
 console.table()表格
 
 timing 執行時間計算  console.time()、console.timeEnd()
- ```javascript=
-     console.time('fetching data');
-    fetch('https://api.github.com/users/wesbos')
-      .then(data => data.json())
-      .then(data => {
-        console.log(data);
-      });
-    console.timeEnd('fetching data');
- ```
+
+```javascript=
+    console.time('fetching data');
+   fetch('https://api.github.com/users/wesbos')
+     .then(data => data.json())
+     .then(data => {
+       console.log(data);
+     });
+   console.timeEnd('fetching data');
+```
 
 ****
 
 ## 10 - Hold Shift and Check Checkboxes
+
 input checkbox type，checked屬性為checkbox時，表示輸入是否被選中。設置的屬性設置可以為checked="checked"，或簡單地設置為checked。
 
 ****
 
 ## 11 - Custom Video Player
+
+[:fullscreen - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:fullscreen)
+
+[:fullscreen| Can I use](https://caniuse.com/?search=%3Afullscreen)
+
+[::-webkit-slider-runnable-track - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-slider-runnable-track)
+
+[::-webkit-slider-thumb - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::-webkit-slider-thumb)
+
+[HTMLMediaElement.currentTime - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement/currentTime)
+
+常見影片操作：常影片通常會把影片放到youtube再崁到網頁裡可以降低server的負擔；短影片會做為背景影音作循環撥放，但就不是像第11天的範例一樣操作影片
+
+[&lt;video&gt; - HTML（超文本标记语言） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)
+
+預設<video>的controls屬性就包含對影片基本的控制 ( 暫停/撥放、音量、全螢幕、下載、子母畫面 )
+
+主流影片格式，例如：mp4
+
+```javascript
+//用中括號取物件屬性 ( key或index都可以使用 )
+const method = video.paused ? "play" : "pause";
+video[method]();
+//避免if else判斷的分歧，比較精省
+```
+
+```javascript
+//將狀態管理和畫面管理分成2個function去耦合
+//使用者 > 操作video > video狀態更新畫面
+// 撥放 / 暫停=>狀態切換
+function togglePlay() {
+  const method = video.paused ? "play" : "pause";
+  video[method]();
+}
+
+// 撥放 / 暫停=>畫面切換
+function updateButton() {
+  const icon = this.paused ? "►" : "❚ ❚";
+  toggle.textContent = icon;
+}   
+
+video.addEventListener("click", togglePlay);
+video.addEventListener("play", updateButton);
+video.addEventListener("pause", updateButton);
+```
+
+拖曳操作：算座標、滑鼠按下開啟、滑鼠放開關閉（移動端要用 touch事件）
+
+```javascript
+progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
+```
 
 ****
 

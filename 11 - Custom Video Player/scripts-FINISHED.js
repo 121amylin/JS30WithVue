@@ -1,26 +1,30 @@
 /* Get Our Elements */
-const player = document.querySelector('.player');
-const video = player.querySelector('.viewer');
-const progress = player.querySelector('.progress');
-const progressBar = player.querySelector('.progress__filled');
-const toggle = player.querySelector('.toggle');
-const skipButtons = player.querySelectorAll('[data-skip]');
-const ranges = player.querySelectorAll('.player__slider');
+const player = document.querySelector(".player");
+const video = player.querySelector(".viewer");
+const progress = player.querySelector(".progress");
+const progressBar = player.querySelector(".progress__filled");
+const toggle = player.querySelector(".toggle");//撥放/暫停按鈕
+const skipButtons = player.querySelectorAll("[data-skip]");
+const ranges = player.querySelectorAll(".player__slider");
 
-/* Build out functions */
+/* Build out functions 構建函數 */
+
+// 撥放 / 暫停=>狀態切換
 function togglePlay() {
-  const method = video.paused ? 'play' : 'pause';
+  const method = video.paused ? "play" : "pause";
   video[method]();
 }
 
+// 撥放 / 暫停=>畫面切換
 function updateButton() {
-  const icon = this.paused ? '►' : '❚ ❚';
-  console.log(icon);
+  const icon = this.paused ? "►" : "❚ ❚";
+  // console.log(icon);
   toggle.textContent = icon;
 }
 
+//速度操作
 function skip() {
- video.currentTime += parseFloat(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 function handleRangeUpdate() {
@@ -37,19 +41,21 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
-/* Hook up the event listeners */
-video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
-video.addEventListener('timeupdate', handleProgress);
+/* Hook up the event listeners 連接事件監聽器 */
+video.addEventListener("click", togglePlay);
+video.addEventListener("play", updateButton);
+video.addEventListener("pause", updateButton);
+video.addEventListener("timeupdate", handleProgress);
 
-toggle.addEventListener('click', togglePlay);
-skipButtons.forEach(button => button.addEventListener('click', skip));
-ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
-ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
+toggle.addEventListener("click", togglePlay);
+skipButtons.forEach((button) => button.addEventListener("click", skip));
+ranges.forEach((range) => range.addEventListener("change", handleRangeUpdate));
+ranges.forEach((range) =>
+  range.addEventListener("mousemove", handleRangeUpdate)
+);
 
 let mousedown = false;
-progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+progress.addEventListener("click", scrub);
+progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));

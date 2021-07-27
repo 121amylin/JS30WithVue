@@ -28,6 +28,7 @@ body {
 }
 
 /* This css is only applied when fullscreen is active. */
+/* 此 css 僅在全屏處於活動狀態時應用。 */
 .player:fullscreen {
   max-width: none;
   width: 100%;
