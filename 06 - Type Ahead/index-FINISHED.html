@@ -22,6 +22,9 @@ fetch(endpoint)
   .then(blob => blob.json())
   .then(data => cities.push(...data));
 
+
+
+
 function findMatches(wordToMatch, cities) {
   return cities.filter(place => {
     // here we need to figure out if the city or state matches what was searched
@@ -30,9 +33,13 @@ function findMatches(wordToMatch, cities) {
   });
 }
 
+
+
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+
 
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
@@ -50,11 +57,17 @@ function displayMatches() {
   suggestions.innerHTML = html;
 }
 
+
+
 const searchInput = document.querySelector('.search');
 const suggestions = document.querySelector('.suggestions');
 
+
+
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
+
+
 
 </script>
   </body>

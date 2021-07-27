@@ -1,50 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Console Tricks!</title>
-  </head>
-  <body>
-    <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
-    <script>
-      const dogs = [
-        { name: "Snickers", age: 2 },
-        { name: "hugo", age: 8 },
-      ];
+<head>
+  <meta charset="UTF-8" />
+  <title>Console Tricks!</title>
+</head>
 
-      function makeGreen() {
-        const p = document.querySelector("p");
-        p.style.color = "#BADA55";
-        p.style.fontSize = "50px";
-      }
+<body>
+  <p onClick="makeGreen()" data-set="qwe" class="a12 w" id="rr" style="color: blueviolet;">×BREAK×DOWN×</p>
 
-      // Regular
+  <script>
 
-      // Interpolated
 
-      // Styled
+    function makeGreen() {
+      const p = document.querySelector("p");
+      p.style.color = "#BADA55";
+      p.style.fontSize = "50px";
+    }
 
-      // warning!
+    // Regular 正常的
 
-      // Error :|
+    // Interpolated 差值
+    console.log('Hello I am a %s string!', '123');
 
-      // Info
+    // Styled
+    console.log("%cHello %cWorld", "color:red;", "color:blue;background:yellow")
+    // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
 
-      // Testing
+    // warning!
+    console.warn("%c住手!!", 'color:red')
 
-      // clearing
+    // Error :|
+    console.error('error!!!')
 
-      // Viewing DOM Elements
+    // Info
+    console.info('Info')
 
-      // Grouping together
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(p, 'That is wrong!');
+    // clearing
+    console.clear();
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+    //console.dir()在中顯示顯示指定 JavaScript 對象的屬性時，還通過文件樹樣式的交互列表顯示。
 
-      // counting
+    console.clear()
 
-      // timing
-    </script>
-    <script
-      src="../common/vue.js"
-    ></script>
-  </body>
+    // Grouping together  console分組
+    const dogs = [
+      { name: "Snickers", age: 2 },
+      { name: "hugo", age: 8 },
+      { name: "Amy", age: 27 },
+    ];
+
+    //不展開分組
+    // dogs.forEach(dog => {
+    //   console.groupCollapsed(`${dog.name}`);
+    //   console.log(`This is ${dog.name}`);
+    //   console.log(`${dog.name} is ${dog.age} years old`);
+    //   console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+    //   console.groupEnd(`${dog.name}`);
+    // });
+
+    //展開分組
+    // dogs.forEach(dog => {
+    //   console.group(`${dog.name}`)
+    //   console.log(`This is ${dog.name}`);
+    //   console.log(`${dog.name} is ${dog.age} years old`);
+    //   console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+    //   console.groupEnd(`${dog.name}`);
+    // });
+
+    // counting 計數
+    // console.count('Wes');
+    // console.count('Wes');
+    // console.count('Steve');
+    // console.count('Steve');
+    // console.count('Wes');
+    // console.count('Steve');
+    // console.count('Wes');
+    // console.count('Steve');
+    // console.count('Steve');
+    // console.count('Steve');
+    // console.count('Steve');
+    // console.count('Steve');
+
+    // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.log(data);
+      });
+    console.timeEnd('fetching data');
+
+    //table 表格
+    // console.table(dogs);
+  </script>
+  <script src="../common/vue.js"></script>
+</body>
+
 </html>

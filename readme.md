@@ -89,17 +89,98 @@ toLocaleString()
 
 ## 07 - Array Cardio Day 2
 
+Array.prototype.some()、Array.prototype.every()、 Array.prototype.find()、Array.prototype.findIndex() 使用、解構附值
+
 ***
 
 ## 08 - Fun with HTML5 Canvas
 
+[CanvasRenderingContext2D.globalCompositeOperation 混合模式操作 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
+
+
 ***
 
 ## 09 - Dev Tools Domination
+[瀏覽器console.log()外的一些其他用法](https://ithelp.ithome.com.tw/articles/10209871)
+
+- %d表示數位數字(digital)
+- %f表示浮點數(float)
+- %s表示字串(string)一樣
+- %c，與其對應的是一個CSS格式的字串
+
+```javascript=
+console.log("%cHello %cWorld", "color:red;", "color:blue;background:yellow")
+```
+[JavaScript中不得不說的斷言?](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/668729/)
+
+console.dir()在中顯示顯示指定 JavaScript 對象的屬性時，還通過文件樹樣式的交互列表顯示。(會列出class和ID的值)
+
+console.groupCollapsed() 方法用於設置折疊的分組信息，在這個代碼以下執行輸出的信息都會再折疊的分組裡。 點擊擴展按鈕打開分組信息。
+提示: 使用 console.groupEnd() 方法來結束當前的分組。
+提示: 使用 console.group() 方法來設置不折疊的分組信息。
+
+```javascript=
+  // Grouping together  console分組
+    const dogs = [
+      { name: "Snickers", age: 2 },
+      { name: "hugo", age: 8 },
+      { name: "Amy", age: 27 },
+    ];
+
+    //不展開分組
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    //展開分組
+    dogs.forEach(dog => {
+      console.group(`${dog.name}`)
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+```
+
+console.count 計數
+
+```javascript=
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+
+```
+
+console.table()表格
+
+timing 執行時間計算  console.time()、console.timeEnd()
+ ```javascript=
+     console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.log(data);
+      });
+    console.timeEnd('fetching data');
+ ```
 
 ****
 
 ## 10 - Hold Shift and Check Checkboxes
+input checkbox type，checked屬性為checkbox時，表示輸入是否被選中。設置的屬性設置可以為checked="checked"，或簡單地設置為checked。
 
 ****
 

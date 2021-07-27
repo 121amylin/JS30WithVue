@@ -1,0 +1,28 @@
+[{
+  "id": 0,
+  "text": "This is an inbox layout."
+}, {
+  "id": 1,
+  "text": "Check one item"
+}, {
+  "id": 2,
+  "text": "Hold down your Shift key"
+}, {
+  "id": 3,
+  "text": "Check a lower item"
+}, {
+  "id": 4,
+  "text": "Everything in between should also be set to checked"
+}, {
+  "id": 5,
+  "text": "Try to do it without any libraries"
+}, {
+  "id": 6,
+  "text": "Just regular JavaScript"
+}, {
+  "id": 7,
+  "text": "Good Luck!"
+}, {
+  "id": 8,
+  "text": "Don't forget to tweet your result!"
+}]
