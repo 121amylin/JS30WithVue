@@ -106,7 +106,7 @@ Array.prototype.some()、Array.prototype.every()、 Array.prototype.find()、Arr
 - %s表示字串(string)一樣
 - %c，與其對應的是一個CSS格式的字串
 
-```javascript=
+```javascript
 console.log("%cHello %cWorld", "color:red;", "color:blue;background:yellow")
 ```
 
@@ -118,7 +118,7 @@ console.groupCollapsed() 方法用於設置折疊的分組信息，在這個代�
 提示: 使用 console.groupEnd() 方法來結束當前的分組。
 提示: 使用 console.group() 方法來設置不折疊的分組信息。
 
-```javascript=
+```javascript
   // Grouping together  console分組
     const dogs = [
       { name: "Snickers", age: 2 },
@@ -147,7 +147,7 @@ console.groupCollapsed() 方法用於設置折疊的分組信息，在這個代�
 
 console.count 計數
 
-```javascript=
+```javascript
     console.count('Wes');
     console.count('Wes');
     console.count('Steve');
@@ -166,7 +166,7 @@ console.table()表格
 
 timing 執行時間計算  console.time()、console.timeEnd()
 
-```javascript=
+```javascript
     console.time('fetching data');
    fetch('https://api.github.com/users/wesbos')
      .then(data => data.json())
