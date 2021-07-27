@@ -22,7 +22,7 @@ function updateButton() {
   toggle.textContent = icon;
 }
 
-//速度操作
+//快進操作
 function skip() {
   video.currentTime += parseFloat(this.dataset.skip);
 }

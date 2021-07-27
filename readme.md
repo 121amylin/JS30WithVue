@@ -237,7 +237,17 @@ video.addEventListener("pause", updateButton);
 progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
 ```
 
+```javascript
+//<button data-skip="-10" class="player__button">« 10s</button>
+//<button data-skip="25" class="player__button">25s »</button>
+function skip() {
+  video.currentTime += parseFloat(this.dataset.skip);
+}
+```
+
 ****
+
+
 
 ## 12 - Key Sequence Detection
 
