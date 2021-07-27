@@ -200,7 +200,7 @@ input checkbox type，checked屬性為checkbox時，表示輸入是否被選中�
 
 [&lt;video&gt; - HTML（超文本标记语言） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)
 
-預設<video>的controls屬性就包含對影片基本的控制 ( 暫停/撥放、音量、全螢幕、下載、子母畫面 )
+預設< video >的controls屬性就包含對影片基本的控制 ( 暫停/撥放、音量、全螢幕、下載、子母畫面 )
 
 主流影片格式，例如：mp4
 
