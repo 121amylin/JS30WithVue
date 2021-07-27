@@ -247,9 +247,21 @@ function skip() {
 
 ****
 
-
-
 ## 12 - Key Sequence Detection
+
+應用：活動案的彩蛋
+
+keydown  按著會連續觸發；keyup起來才會觸發一次
+
+e.key    VS  e.keycode    ，e.key會有大小寫議題
+
+比對兩個陣列內容一不一樣的思路：轉字串、跑迴圈、資料比對
+
+```javascript
+ splice第一、二個參數是負數的時候不會切東西出來
+ pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+ //​keyArr.splice(0, input.length - secretCode.length);
+```
 
 ***
 
