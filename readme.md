@@ -270,7 +270,7 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
  //​keyArr.splice(0, input.length - secretCode.length);
 ```
 
-練習範例:注意監聽的感應區域
+練習範例：注意監聽的感應區域
 
 ***
 
@@ -278,9 +278,7 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
 
 debounce做計時器的包裝(延遲)
 
-call 、apply，傳遞參數的差別
-
-閉包觀念
+call 、apply的差別＝＞傳遞參數的方始
 
 ```javascript
  //debounce =>好處可以讓事件觸發不會過於頻繁；缺點是可能導致效果延遲使用體驗驗卡頓      
@@ -298,6 +296,45 @@ call 、apply，傳遞參數的差別
         if (callNow) func.apply(context, args);
       };
     };
+```
+
+閉包觀念：通常除了呼叫他，他自己運用修改，沒有其他的方式修改內部內容
+
+```javascript
+let fun=function(num){
+    //設計參數
+    let count=num
+
+    //設計操作功能
+    return function(){console.log(++count)}
+}
+let num=fun(0)
+
+num()
+num()
+num()
+```
+
+```javascript
+let fun=function(num){
+    //設計參數
+    let count=num
+
+    //設計操作功能
+    return { 
+        add(){
+            console.log(++count)
+        },
+        get(){
+            console.log(num)
+        }
+    }
+}
+let num=fun(0)
+num.get()
+num.add()
+num.get()
+
 ```
 
 捲軸相關事件：scroll 卷軸、mousewhell 滑鼠滾輪
@@ -319,6 +356,12 @@ if(img.offsetTop+img.height/2 <windowBottom){   //肚子進來，適中
     img.classList.add('active')
 }
 ```
+
+橫向捲軸應用：[範例：東森新聞 - 新聞在哪裡 東森就在哪裡](https://news.ebc.net.tw/) 、  [jQuery - 滚动条插件 NiceScroll 使用详解（滚动条美化）](https://www.hangge.com/blog/cache/detail_1931.html)
+
+
+
+
 
 ***
 
