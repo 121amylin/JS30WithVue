@@ -200,9 +200,15 @@ input checkbox type，checked屬性為checkbox時，表示輸入是否被選中�
 
 [&lt;video&gt; - HTML（超文本标记语言） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video)
 
+[HTMLMediaElement: timeupdate | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement/timeupdate_event)
+
+[HTML <input> 标签的 step 属性](https://www.w3school.com.cn/tags/att_input_step.asp)
+
+
 預設< video >的controls屬性就包含對影片基本的控制 ( 暫停/撥放、音量、全螢幕、下載、子母畫面 )
 
 主流影片格式，例如：mp4
+Vue 的$event操作，例如:@click='progressBarHandle($event)'
 
 ```javascript
 //用中括號取物件屬性 ( key或index都可以使用 )
@@ -262,6 +268,7 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
  //​keyArr.splice(0, input.length - secretCode.length);
 ```
+練習範例:注意監聽的感應區域
 
 ***
 
