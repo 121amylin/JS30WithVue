@@ -204,10 +204,11 @@ input checkbox type，checked屬性為checkbox時，表示輸入是否被選中�
 
 [HTML <input> 标签的 step 属性](https://www.w3school.com.cn/tags/att_input_step.asp)
 
-
 預設< video >的controls屬性就包含對影片基本的控制 ( 暫停/撥放、音量、全螢幕、下載、子母畫面 )
 
 主流影片格式，例如：mp4
+
+
 Vue 的$event操作，例如:@click='progressBarHandle($event)'
 
 ```javascript
@@ -268,6 +269,7 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
  pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
  //​keyArr.splice(0, input.length - secretCode.length);
 ```
+
 練習範例:注意監聽的感應區域
 
 ***
@@ -317,10 +319,6 @@ if(img.offsetTop+img.height/2 <windowBottom){   //肚子進來，適中
     img.classList.add('active')
 }
 ```
-
-
-
-
 
 ***
 
