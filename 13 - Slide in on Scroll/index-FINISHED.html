@@ -43,6 +43,7 @@
   </div>
 
   <script>
+    //debounce 事件延遲
     function debounce(func, wait = 20, immediate = true) {
       var timeout;
       return function() {
@@ -58,16 +59,23 @@
       };
     };
 
+    //獲取畫面上每張圖片
     const sliderImages = document.querySelectorAll('.slide-in');
 
+    //遍歷每張圖片動畫效果
     function checkSlide() {
       sliderImages.forEach(sliderImage => {
-        // half way through the image
-        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+        // half way through the image 獲取圖像的一半位置
+        // (已捲動的高度+窗口高度)-(圖片一半的高度)=>啟動動畫觸發的高度
+        const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2; 
         // bottom of the image
+        // 圖片位於整體畫面的位置+圖片高度=>圖片完全露出位置  
         const imageBottom = sliderImage.offsetTop + sliderImage.height;
+        // 啟動動畫觸發的高度>圖片頂端，判斷畫面捲動高度大於圖片頂端
         const isHalfShown = slideInAt > sliderImage.offsetTop;
+        // 卷軸位置<啟動動畫觸發的高度，判判斷畫面捲動高度小於圖片尾端
         const isNotScrolledPast = window.scrollY < imageBottom;
+        // 頁面是否捲動到圖片頂端與在尾端之間，是的話添加active class；不是的話移除active class
         if (isHalfShown && isNotScrolledPast) {
           sliderImage.classList.add('active');
         } else {
@@ -76,6 +84,7 @@
       });
     }
 
+    //監聽卷軸事件，對動畫效果添加事件延遲效果
     window.addEventListener('scroll', debounce(checkSlide));
 
   </script>

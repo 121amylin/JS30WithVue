@@ -276,6 +276,10 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
 
 ## 13 - Slide in on Scroll
 
+[JS 30 - 13 - Slide in on Scroll](https://ithelp.ithome.com.tw/articles/10205963)
+
+<!-- wesbos範例圖片加載進入的位置在圖片尾部，練習的範例希望在中間(本範例其實不用用vue做，mounted裡面的程式和debounce一樣放在不外部也可以) -->
+
 debounce做計時器的包裝(延遲)
 
 call 、apply的差別＝＞傳遞參數的方始
@@ -360,16 +364,172 @@ if(img.offsetTop+img.height/2 <windowBottom){   //肚子進來，適中
 橫向捲軸應用：[範例：東森新聞 - 新聞在哪裡 東森就在哪裡](https://news.ebc.net.tw/) 、  [jQuery - 滚动条插件 NiceScroll 使用详解（滚动条美化）](https://www.hangge.com/blog/cache/detail_1931.html)
 
 
+【debounce 事件延遲 VS throttle 函數節流】
+[【underscore.js】[javascript] throttle 與 debounce，處理頻繁的 callback 執行頻率](https://blog.camel2243.com/2017/06/05/javascript-throttle-%E8%88%87-debounce%EF%BC%8C%E8%99%95%E7%90%86%E9%A0%BB%E7%B9%81%E7%9A%84-callback-%E5%9F%B7%E8%A1%8C%E9%A0%BB%E7%8E%87/)
+[lodash___debounce](https://lodash.com/docs/4.17.15#debounce)
+[lodash___throttle](https://lodash.com/docs/4.17.15#throttle)
 
+[JS throttle與debounce的區別](https://segmentfault.com/a/1190000014292298)
+debounce：延遲函數的執行，在函數最後一次調用時刻的wait毫秒之後，停止之後再執行的行為，將一個連續的調用歸為一個。
+throttle：創建並返回一個像節流閥一樣的函數，當重複調用函數的時候，最多每隔指定的wait毫秒調用一次該函數；
+
+[【underscore】一句話說清楚_.throttle和_.debounce的區別](https://www.tangshuang.net/3133.html)
+雖然在等待時間內函數都不會再執行，但_.throttle在第一次觸發後開始計算等待時間，_.debounce在最後一次觸發之後才計算等待時間（最後一次在等待時間範圍內）。
 
 
 ***
 
 ## 14 - JavaScript References VS Copying
+【array】
+複製array的方法(以下都是淺拷貝)
+
+```javascript
+  // with array
+  const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+  const players2 = ["Wes", "Sarah", "Ryan", "Poppy", [1, 2, 3]];
+
+
+  //淺考貝
+  const team2 = players.slice();
+  const team3 = [].concat(players);
+  const team4 = [...players];
+  const team5 = Array.from(players);
+```
+
+
+[輕鬆淺拷貝的陣列 Array 方法 slice()](https://ithelp.ithome.com.tw/articles/10224915) 
+
+slice() 不給參數就什麼都給你。所以可以當作數組的淺拷貝，但遇到多維的深拷貝就失效
+slice() 會回傳一個新陣列物件
+
+
+```javascript
+//arr.slice([begin[, end]])
+//如果第二個參數是負數，表示從陣列的尾端算回來。
+//arr.slice()===arr.slice(0)=>不給參數就什麼都給你
+
+const friends1 = ['Ayda', 'Phi', 'Alex', 'Chris', 'Tracy', 'Thomas', 'Jean'];
+
+// 從索引值 1 擷取 至 2 (2+1=3) 
+const friends2 = friends1.slice(1, 3);
+friends2; // [ 'Phi', 'Alex' ]
+
+// 只要第二個參數是 0 就會回傳空陣列
+const friends3 = friends1.slice(1, 0);
+friends3; // []
+
+// -2 是從尾端開始數回來
+const friends4 = friends1.slice(2, -2);
+friends4; // [ 'Alex', 'Chris', 'Tracy' ]
+
+const friends5 = friends1.slice(2, 2);
+friends5; // []
+```
+
+比較splice
+splice會改變原數組
+
+```javascript
+array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+```
+
+【object】
+複製object的方法
+
+```javascript
+const wes = {
+  name: 'Wes',
+  age: 100,
+  social: {
+    twitter: '@wesbos',
+    facebook: 'wesbos.developer'
+  }
+};
+
+//淺拷貝
+const dev = Object.assign({}, wes);
+let obj={...wes}
+
+//深拷貝
+const dev2 = JSON.parse(JSON.stringify(wes));
+```
+
+Object.assign()被用來複製一個或多個物件自身所有可數的屬性到另一個目標物件。回傳的值為該目標物件。
+
+[Object.assign()的使用](https://www.796t.com/article.php?id=87234) 
+
+
+深拷貝方法：JSON.stringify()、JSON.parse()     (不支援函式拷貝)
+```javascript
+let obj1 = {
+  a: 1,
+  b: 2,
+};
+let obj2 = JSON.parse(JSON.stringify(obj1));
+console.log(obj2) //{a: 1, b: 2}
+obj2.c=3 
+console.log(obj1) //{a: 1, b: 2}
+console.log(obj2) //{a: 1, b: 2, c: 3}
+```
+
+用遞歸實現深拷貝(函式也能拷貝)
+
+```javascript
+function checkType(item) {
+  return Object.prototype.toString.call(item).slice(8, -1)  //判斷型別
+}
+function deepClone(item) {
+  let type = checkType(item)
+  let result
+  if (type === "Object") {  //處理物件型別
+    result = {}
+  } else if (type === "Array") {  //處理陣列型別
+    result = []
+  } else {    //處理基本型別
+    result = item
+  }
+  for (let i in item) {
+    let value = item[i]
+    let valueType = checkType(value)
+    if (valueType === "Object" || valueType === "Array") {
+      result[i] = deepClone(value)  //遞歸
+    } else {
+      result[i] = value
+    }
+  }
+  return result
+}
+
+
+let obj = {
+  a: 1,
+  b: {
+    c: 2
+  },
+  foo(){
+    console.log(1)
+  }
+}
+let obj2=deepClone(obj)
+obj.a=99
+console.log(obj) //{a: 99, b: {…}, foo: ƒ}
+console.log(obj2) //{a: 1, b: {…}, foo: ƒ}
+obj2.foo=function(){
+  console.log(99)
+}
+obj2.foo() //99
+obj.foo() //1
+```
+
 
 ****
 
+
+
 ## 15 - LocalStorage
+[Window.localStorage___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage)
+[[JavaScript] localStorage 的使用](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/javascript-localstorage-%E7%9A%84%E4%BD%BF%E7%94%A8-e0da6f402453)
+[ICON工具](https://thenounproject.com/search/?q=fish&i=589236)
 
 ****
 
