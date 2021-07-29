@@ -534,6 +534,50 @@ obj.foo() //1
 [[JavaScript] localStorage 的使用](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/javascript-localstorage-%E7%9A%84%E4%BD%BF%E7%94%A8-e0da6f402453)
 [ICON工具](https://thenounproject.com/search/?q=fish&i=589236)
 
+chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼叫那些API讀了那些檔案
+
+【Local Storage】
+
+- 本地儲存庫
+
+- key value可以儲存文字、數字（不能記物件）
+
+- 不主動刪除，記錄不會不見
+
+- 5~10MB
+
+- 使用上注意使用者開二個視窗會發生什麼事？
+
+- 只依照key做對應(如果使用者開2個視窗，會發生什麼事)
+
+【Cookie 】
+
+- 用於登錄、驗證
+
+- 4K
+
+【Session Storage 】
+
+- 單次執行（Session概念）
+
+- 記在本地端（Session記在服務器，佔服務器端資源）
+
+【IndexedDB】
+
+- 可以練習資料管理
+
+- 相 容性不錯
+
+【Web SQL】
+
+- 棄用
+
+- W3C Web 應用工作組（Web Applications Working Group）已於2010年11月停止研究該規範，理由是凡是使用Web SQL 資料庫的瀏覽器對應的資料庫管理系統均為SQLite，無法在其他資料庫管理系統上實現，因此Web SQL 資料庫無法繼續成為W3C的推薦規範。
+
+- ​[match]([String.prototype.match() - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)) 跟[matches]([Element.matches() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/matches))
+
+
+
 ****
 
 ## 16 - Mouse Move Shadow
