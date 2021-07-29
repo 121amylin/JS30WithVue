@@ -208,7 +208,6 @@ input checkbox type，checked屬性為checkbox時，表示輸入是否被選中�
 
 主流影片格式，例如：mp4
 
-
 Vue 的$event操作，例如:@click='progressBarHandle($event)'
 
 ```javascript
@@ -280,6 +279,8 @@ e.key    VS  e.keycode    ，e.key會有大小寫議題
 
 <!-- wesbos範例圖片加載進入的位置在圖片尾部，練習的範例希望在中間(本範例其實不用用vue做，mounted裡面的程式和debounce一樣放在不外部也可以) -->
 
+可以用console.log(new Date().getTime())測試校驗
+
 debounce做計時器的包裝(延遲)
 
 call 、apply的差別＝＞傳遞參數的方始
@@ -338,7 +339,6 @@ let num=fun(0)
 num.get()
 num.add()
 num.get()
-
 ```
 
 捲軸相關事件：scroll 卷軸、mousewhell 滑鼠滾輪
@@ -363,7 +363,6 @@ if(img.offsetTop+img.height/2 <windowBottom){   //肚子進來，適中
 
 橫向捲軸應用：[範例：東森新聞 - 新聞在哪裡 東森就在哪裡](https://news.ebc.net.tw/) 、  [jQuery - 滚动条插件 NiceScroll 使用详解（滚动条美化）](https://www.hangge.com/blog/cache/detail_1931.html)
 
-
 【debounce 事件延遲 VS throttle 函數節流】
 [【underscore.js】[javascript] throttle 與 debounce，處理頻繁的 callback 執行頻率](https://blog.camel2243.com/2017/06/05/javascript-throttle-%E8%88%87-debounce%EF%BC%8C%E8%99%95%E7%90%86%E9%A0%BB%E7%B9%81%E7%9A%84-callback-%E5%9F%B7%E8%A1%8C%E9%A0%BB%E7%8E%87/)
 [lodash___debounce](https://lodash.com/docs/4.17.15#debounce)
@@ -377,9 +376,17 @@ throttle：創建並返回一個像節流閥一樣的函數，當重複調用函
 雖然在等待時間內函數都不會再執行，但_.throttle在第一次觸發後開始計算等待時間，_.debounce在最後一次觸發之後才計算等待時間（最後一次在等待時間範圍內）。
 
 
+
+應用範例：debounce=>mouseover ( chrome線上應用程式商店hover效果 )，其他的throttle應用比較多
+
+
+
+lazyload(data系列或是框架) [範例](#)
+
 ***
 
 ## 14 - JavaScript References VS Copying
+
 【array】
 複製array的方法(以下都是淺拷貝)
 
@@ -396,12 +403,10 @@ throttle：創建並返回一個像節流閥一樣的函數，當重複調用函
   const team5 = Array.from(players);
 ```
 
-
 [輕鬆淺拷貝的陣列 Array 方法 slice()](https://ithelp.ithome.com.tw/articles/10224915) 
 
 slice() 不給參數就什麼都給你。所以可以當作數組的淺拷貝，但遇到多維的深拷貝就失效
 slice() 會回傳一個新陣列物件
-
 
 ```javascript
 //arr.slice([begin[, end]])
@@ -458,8 +463,8 @@ Object.assign()被用來複製一個或多個物件自身所有可數的屬性�
 
 [Object.assign()的使用](https://www.796t.com/article.php?id=87234) 
 
-
 深拷貝方法：JSON.stringify()、JSON.parse()     (不支援函式拷貝)
+
 ```javascript
 let obj1 = {
   a: 1,
@@ -521,12 +526,10 @@ obj2.foo() //99
 obj.foo() //1
 ```
 
-
 ****
 
-
-
 ## 15 - LocalStorage
+
 [Window.localStorage___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Window/localStorage)
 [[JavaScript] localStorage 的使用](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/javascript-localstorage-%E7%9A%84%E4%BD%BF%E7%94%A8-e0da6f402453)
 [ICON工具](https://thenounproject.com/search/?q=fish&i=589236)
