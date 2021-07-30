@@ -46,14 +46,19 @@
   <ul id="bands"></ul>
 
 <script>
+  //資料
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+//用正則將開頭有 a、the、an 的字串替換為空白字元(i 不區分大小寫)，並移除頭尾空白字符
 function strip(bandName) {
   return bandName.replace(/^(a |the |an )/i, '').trim();
 }
 
+//進行排序sort()返回值為1會更換排序，sort會改變原數組
 const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
 
+console.log(sortedBands)
+//產生HTML結構
 document.querySelector('#bands').innerHTML =
   sortedBands
     .map(band => `<li>${band}</li>`)

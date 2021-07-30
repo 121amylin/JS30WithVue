@@ -576,19 +576,30 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
 
 - ​[match]([String.prototype.match() - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)) 跟[matches]([Element.matches() - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/matches))
 
+[vue中v-if和v-for不建議同時使用的坑](https://zhuanlan.zhihu.com/p/147882950)
+
 
 
 ****
 
 ## 16 - Mouse Move Shadow
+解構賦值
+```javascript
+  const { offsetWidth: width, offsetHeight: height } = hero;
+  let { offsetX: x, offsetY: y } = e;
+```
 
 ****
 
 ## 17 - Sort Without Articles
+[String.prototype.replace()___MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+replace() 返回新字串，但原始的字串會保持不變。
+正則：//=>宣告正則、^=>從頭開始、()=>分組、|=>或、i=>忽略大小寫
 
 ****
 
 ## 18 - Adding Up Times with Reduce
+資料處理練習，沒有使用Vue框架
 
 *****
 
@@ -605,6 +616,8 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
 ******
 
 ## 22 - Follow Along Link Highlighter
+[Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+用於返回元素的大小和相對於視口的位置，回傳值是一個物件，包含width、height、x、y、top、right、bottom、left
 
 ******
 
@@ -617,6 +630,18 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
 ****
 
 ## 25 - Event Capture, Propagation, Bubbling and Once
+複習事件冒泡與事件捕獲，沒有使用Vue框架
+[EventTarget.addEventListener()__MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)
+
+addEventListener() 第三個參數可以傳布林值或是物件(capture、once、passive、signal)。第三個參數預設值是false，即不使用事件捕獲。所以不設置的話addEventListener()都是走事件冒泡
+
+e.target.className  VS  this.classList.value
+```javascript
+  function showClassName() {
+    // console.log(e.target.className)
+    console.log(this.classList.value)
+  }
+```
 
 *****
 
