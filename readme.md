@@ -375,11 +375,7 @@ throttle：創建並返回一個像節流閥一樣的函數，當重複調用函
 [【underscore】一句話說清楚_.throttle和_.debounce的區別](https://www.tangshuang.net/3133.html)
 雖然在等待時間內函數都不會再執行，但_.throttle在第一次觸發後開始計算等待時間，_.debounce在最後一次觸發之後才計算等待時間（最後一次在等待時間範圍內）。
 
-
-
 應用範例：debounce=>mouseover ( chrome線上應用程式商店hover效果 )，其他的throttle應用比較多
-
-
 
 lazyload(data系列或是框架) [範例](#)
 
@@ -578,12 +574,12 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
 
 [vue中v-if和v-for不建議同時使用的坑](https://zhuanlan.zhihu.com/p/147882950)
 
-
-
 ****
 
 ## 16 - Mouse Move Shadow
+
 解構賦值
+
 ```javascript
   const { offsetWidth: width, offsetHeight: height } = hero;
   let { offsetX: x, offsetY: y } = e;
@@ -592,6 +588,7 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
 ****
 
 ## 17 - Sort Without Articles
+
 [String.prototype.replace()___MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 replace() 返回新字串，但原始的字串會保持不變。
 正則：//=>宣告正則、^=>從頭開始、()=>分組、|=>或、i=>忽略大小寫
@@ -599,15 +596,32 @@ replace() 返回新字串，但原始的字串會保持不變。
 ****
 
 ## 18 - Adding Up Times with Reduce
+
 資料處理練習，沒有使用Vue框架
 
 *****
 
 ## 19 - Webcam Fun
 
+Webcam  API
+
+一個點由RGBA(四個值)組成
+
+去背 ( 邊緣演算法 ) JS：OpevCV.js
+
+roDURL() 轉成base64
+
+insertBefore() ， DOM操作API
+
+延伸應用：彈幕（canvas）
+
 ******
 
 ## 20 - Speech Detection
+
+[SpeechRecognition - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+
+只有chrome支援，用google的server
 
 *******
 
@@ -616,6 +630,7 @@ replace() 返回新字串，但原始的字串會保持不變。
 ******
 
 ## 22 - Follow Along Link Highlighter
+
 [Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
 用於返回元素的大小和相對於視口的位置，回傳值是一個物件，包含width、height、x、y、top、right、bottom、left
 
@@ -630,12 +645,14 @@ replace() 返回新字串，但原始的字串會保持不變。
 ****
 
 ## 25 - Event Capture, Propagation, Bubbling and Once
+
 複習事件冒泡與事件捕獲，沒有使用Vue框架
 [EventTarget.addEventListener()__MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)
 
 addEventListener() 第三個參數可以傳布林值或是物件(capture、once、passive、signal)。第三個參數預設值是false，即不使用事件捕獲。所以不設置的話addEventListener()都是走事件冒泡
 
 e.target.className  VS  this.classList.value
+
 ```javascript
   function showClassName() {
     // console.log(e.target.className)
