@@ -4,8 +4,17 @@ function shadow(e) {
 
   let { offsetX: x, offsetY: y } = e;
 
+  //補座標
+  if (this !== e.target) {
+    x = x + e.target.offsetLeft;
+    y = y + e.target.offsetTop;
+  }
+
   const xWalk = Math.round((x / width) * walk - walk / 2);
   const yWalk = Math.round((y / height) * walk - walk / 2);
+
+    // const xWalk = Math.floor((x / width) * walk )* 2 - walk;
+    // const yWalk = Math.floor((y / height) * walk)* 2 - walk;
 
   //textShadow: x y 模糊 顏色
   e.target.style.textShadow = `
@@ -19,7 +28,7 @@ function shadow(e) {
 new Vue({
   el: "#app",
   mounted() {
-    //監聽的是text( 產陰影的物件本身 )
-    this.$refs.shadowObj.addEventListener('mousemove', (e) => shadow(e))
+    //監聽的是hero ( 最外層 )
+    this.$refs.hero.addEventListener("mousemove", (e) => shadow(e));
   }
 })
