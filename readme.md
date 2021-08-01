@@ -706,15 +706,40 @@ e.target.className  VS  this.classList.value
 
 ## 26 - Stripe Follow Along Nav
 
-分2次加class是為了互動動畫的節奏和層次
+分2次加class，是為了互動動畫的節奏和層次和判斷是否加第２個class ( 狀態控制 )
+
+```javascript
+setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
+```
+
+mouseover、mouseout=>targer ; mouseleave 、mouseented=>currtarger ( 沒辦法用委派的概念 ) 
+
+e.composedPath()
 
 *******
 
 ## 27 - Click and Drag
 
+拖曳狀態處理：計算相對地移動
+1.開始（按下mousedown）
+2.進行中 ( mousemove)
+3.結束 ( mouseup、mouseleave )
+
+
+
+pageX不是用絕對座標
+
+手機要用touch系列 ( touchstart、touchmove、touchen  d )
+
+拖曳的時候注意文字、圖片、連結的預設事件
+
 *******
 
 ## 28 - Video Speed Controller
+
+0-1範圍調整公式：（0-1）* ( 大 - 小 )  + 小
+
+SOLID原則
 
 **********
 
