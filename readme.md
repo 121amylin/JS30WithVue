@@ -585,6 +585,10 @@ chrome開發者工具__sources看讀了那些檔案()snippets)、network看呼�
   let { offsetX: x, offsetY: y } = e;
 ```
 
+offsetX、offsetY和e.target互相影響
+
+左右平衡計算 :  0~1  ，-1~1=>x2-1   ，　0 x 2-1 ~0 x 2-1  
+
 ****
 
 ## 17 - Sort Without Articles
@@ -627,6 +631,14 @@ insertBefore() ， DOM操作API
 
 ## 21 - Geolocation
 
+https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation_API
+
+getCurrentPosition()
+
+getCurrentPosition()
+
+和 setTimeout一樣宣告的時候要命名
+
 ******
 
 ## 22 - Follow Along Link Highlighter
@@ -634,9 +646,39 @@ insertBefore() ， DOM操作API
 [Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
 用於返回元素的大小和相對於視口的位置，回傳值是一個物件，包含width、height、x、y、top、right、bottom、left
 
-******
+要做全域畫面的話，就要處理卷軸位置 ( 因為getBoundingClientRect() 是依整個視口位置再算做座標 )；純粹區域內可以用offectTop、offectLeft ( 主選單效果應用 )******
+
+-----
 
 ## 23 - Speech Synthesis
+
+語音閱讀
+
+voiceschanged 事件
+
+getVoices( )、speak( )、cancel( )
+
+new SpeechSynthesisUtterance()
+
+get系列的選取器可以跑for迴圈或是想辦法轉成數組(Array.from...)
+
+偽元素、虛擬元素在JS沒辦法處理
+
+```javascript
+//選取器使用方式參考
+  const options = document.querySelectorAll('[type="range"], [name="text"]');
+  const xxx= document.querySelectorAll("[class*=col]")
+```
+
+```javascript
+  function setOption() {
+   console.log(this.name, this.value);
+   msg[this.name] = this.value;
+   toggle();
+ }
+ //name的取名設計和value對照，精簡寫法＝＞不用額外判斷或 function 設計
+  options.forEach(option => option.addEventListener('change', setOption));
+```
 
 ******
 
@@ -663,6 +705,8 @@ e.target.className  VS  this.classList.value
 *****
 
 ## 26 - Stripe Follow Along Nav
+
+分2次加class是為了互動動畫的節奏和層次
 
 *******
 

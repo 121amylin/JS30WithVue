@@ -32,6 +32,7 @@
   const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
+  //選取器使用方式參考
   const options = document.querySelectorAll('[type="range"], [name="text"]');
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
@@ -40,7 +41,7 @@
   function populateVoices() {
     voices = this.getVoices();
     voicesDropdown.innerHTML = voices
-      .filter(voice => voice.lang.includes('en'))
+      // .filter(voice => voice.lang.includes('en'))
       .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>`)
       .join('');
   }
@@ -65,6 +66,8 @@
 
   speechSynthesis.addEventListener('voiceschanged', populateVoices);
   voicesDropdown.addEventListener('change', setVoice);
+
+  //name的取名設計和value對照，精簡寫法＝＞不用額外判斷或 function 設計
   options.forEach(option => option.addEventListener('change', setOption));
   speakButton.addEventListener('click', toggle);
   stopButton.addEventListener('click', () => toggle(false));
