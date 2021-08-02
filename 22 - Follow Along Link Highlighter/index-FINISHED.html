@@ -44,7 +44,7 @@
       const coords = { //用一個物件紀錄元素寬度、高度、位於頁面的top位置、位於頁面的left位置
         width: linkCoords.width,
         height: linkCoords.height,
-        top: linkCoords.top + window.scrollY,
+        top: linkCoords.top + window.scrollY, //+ window.scrollY 避免當頁面捲動的時候，位置跑掉
         left: linkCoords.left + window.scrollX
       };
 

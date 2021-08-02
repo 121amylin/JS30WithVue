@@ -9,28 +9,31 @@
 
   <div class="wrapper">
     <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" loop controls></video>
-    <div class="speed">
+    <div class="speed" >
       <div class="speed-bar">1×</div>
     </div>
   </div>
 
 <script>
+  //獲取DOM
   const speed = document.querySelector('.speed');
   const bar = speed.querySelector('.speed-bar');
   const video = document.querySelector('.flex');
 
   function handleMove(e) {
+      //this 指speed
       const y = e.pageY - this.offsetTop;
-      const percent = y / this.offsetHeight;
+      const percent = y / this.offsetHeight; 
       const min = 0.4;
       const max = 4;
       const height = Math.round(percent * 100) + '%';
       const playbackRate = percent * (max - min) + min;
       bar.style.height = height;
-      bar.textContent = playbackRate.toFixed(2) + '×';
-      video.playbackRate = playbackRate;
+      bar.textContent = playbackRate.toFixed(2) + '×';//更新DOM上的顯示文字
+      video.playbackRate = playbackRate;//調整影片速度
     }
-
+  
+  //監聽mousemove事件
   speed.addEventListener('mousemove', handleMove);
 
 </script>

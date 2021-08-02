@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Get User Media Code Along!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="photobooth" id="app">
+    <div class="controls">
+      <!-- 快照按鈕 -->
+      <button @click='takePhoto'>Take Photo</button>
+
+      <!-- RGBA控制 -->
+      <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 name="bmax">
+      </div>
+    </div>
+
+    <!-- 視訊畫面 -->
+    <video class="player"></video>
+
+    <!-- 產生圖像 -->
+    <canvas class="photo" ref='canvas'></canvas>
+
+    <!-- 相片集錦 -->
+    <div class="strip">
+
+      <a v-for='(item,index) in picList' :key='index' :href="item" :alt=`pic${index+1}` :download="`pic${index+1}`">
+        <img :src="item" alt="">
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 快照音效 -->
+  <audio ref="snap" class="snap" src="./snap.mp3" hidden></audio>
+  <script src="../common/vue.js"></script>
+
+  <script src="scripts-START.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Click and Drag</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="items">
     <div class="item item1">01</div>
@@ -34,38 +36,44 @@
     <div class="item item25">25</div>
   </div>
 
-<script>
-  const slider = document.querySelector('.items');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  <script>
+    const slider = document.querySelector('.items');//獲取.items DOM
+    let isDown = false;//是否可以拖曳
+    let startX; //位移大小
+    let scrollLeft; //位移位置
 
-  slider.addEventListener('mousedown', (e) => {
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-  });
+    //監聽mousedown事件，允許拖曳、添加active樣式、紀錄座標
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;//設置位移距離起始值
+      scrollLeft = slider.scrollLeft;//設置位移位置
+      console.log(startX)
+    });
 
-  slider.addEventListener('mouseleave', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+    //監聽mouseleave事件，關閉拖曳、移除active樣式
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
 
-  slider.addEventListener('mouseup', () => {
-    isDown = false;
-    slider.classList.remove('active');
-  });
+    //監聽mouseup事件，關閉拖曳、移除active樣式
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
 
-  slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return;  // stop the fn from running
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3;
-    slider.scrollLeft = scrollLeft - walk;
-  });
+    //監聽mousemove事件
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;  // 使用者需要點擊滑鼠並且拖曳才會有作用，避免滑鼠在元素上滑動就開始拖曳
+      e.preventDefault();//阻止預設事件
+      const x = e.pageX - slider.offsetLeft;//移動距離(越往左滑，越趨近於零)
+      const walk = (x - startX) * 3;//設置卷軸移動的距離 
+      slider.scrollLeft = scrollLeft - walk;//移動卷軸位置
+    });
 
-</script>
+  </script>
 
-  </body>
+</body>
+
 </html>

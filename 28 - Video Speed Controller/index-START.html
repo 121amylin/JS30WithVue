@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Video Speed Scrubber</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <video
-        class="flex"
-        width="765"
-        height="430"
-        src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
-        loop
-        controls
-      ></video>
-      <div class="speed">
-        <div class="speed-bar">1×</div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Speed Scrubber</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrapper" id="app">
+    <video class="flex" width="765" height="430" src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" ref="video" loop
+      controls></video>
+    <div class="speed" ref='speed_box' @mouseover="playbackRateHandle">
+      <div class="speed-bar" :style="{height:stylePercent+'%'}">{{playbackRate}} ×</div>
     </div>
-    <script
-      src="../common/vue.js"
-    ></script>
-    <script></script>
-  </body>
+  </div>
+  <script src="../common/vue.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

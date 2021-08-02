@@ -606,7 +606,6 @@ replace() 返回新字串，但原始的字串會保持不變。
 *****
 
 ## 19 - Webcam Fun
-
 Webcam  API
 
 一個點由RGBA(四個值)組成
@@ -619,29 +618,74 @@ insertBefore() ， DOM操作API
 
 延伸應用：彈幕（canvas）
 
+[navigator 物件讓你可以存取使用者的瀏覽器資訊](https://www.fooish.com/javascript/navigator.html)
+
+[MediaDevices.getUserMedia()___MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia)
+
+[HTML DOM Video 对象](https://techbrood.com/jsref?p=dom-obj-video)
+
+[Day04 你知道 setTimout、setInterval、requestAnimationFrame API 三者的關係嗎](https://zh-tw.coderbridge.com/series/dd90bf7c9656467cb47636c37faf79f3/posts/a417d1e1f8034469ae3f460dfa63b5a3)
+
+[HTMLMediaElement.currentTime__MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement/currentTime)會以秒為單位返回當前媒體元素的播放時間
+
+[HTMLCanvasElement.toDataURL()](https://developer.mozilla.org/zh-TW/docs/Web/API/HTMLCanvasElement/toDataURL)  回傳base64的圖像
+
+[HTML <a> download Attribute](https://www.w3schools.com/tags/att_a_download.asp)
+
+[Node.insertBefore()](https://developer.mozilla.org/zh-TW/docs/Web/API/Node/insertBefore)
+父節點.insertBefore(新增節點, 參考節點(位置));
+如果 referenceNode 為 null，則將 newNode 插入到子節點列表的末尾。
+
+[HTML 音頻/視頻DOM canplay 事件](http://www.w3big.com/zh-TW/tags/av-event-canplay.html)  當瀏覽器能夠開始播放指定的音頻/視頻時，會發生canplay 事件
+
 ******
 
 ## 20 - Speech Detection
+★不需要資料管理，沒有使用vue框架 ★
+語音辨識API
+
+用google的server
+
+[contenteditable_MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Global_attributes/contenteditable)  contenteditable屬性就可以直接讓HTML元件具備編輯的功能
+
+speechSynthesis 語音合成(文字轉語音)
+speechRecognition 語音識別(非同步語音識別)
+如果是在prefixed interface下，則window.SpeechRecognition需要前綴
+變成webkitSpeechRecognition
 
 [SpeechRecognition - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
 
-只有chrome支援，用google的server
+[caniuse__SpeechRecognition](https://caniuse.com/?search=SpeechRecognition%20)  Edge、Chrome、safari 支援
+
+[SpeechRecognitionAlternative.transcript___MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionAlternative/transcript)
+
+[SpeechRecognitionResult.isFinal___MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognitionResult/isFinal)
+
+
+【應用練習】
+ ★ ★語音記事本 ★ ★
+
 
 *******
 
 ## 21 - Geolocation
+★不需要資料管理，沒有使用vue框架 ★
 
-https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation_API
+Geolocation 地理定位API
 
-getCurrentPosition()
+[地理位置定位 (Geolocation)](https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation_API)
 
-getCurrentPosition()
+[Geolocation.getCurrentPosition()_MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/getCurrentPosition) 
+Geolocation.getCurrentPosition() 方法用來獲取設備當前的位置
 
-和 setTimeout一樣宣告的時候要命名
+[Geolocation.watchPosition()___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Geolocation/watchPosition)
+和 setTimeout一樣宣告的時候要命名(清除用)
+這個函式將回傳一組 ID 編號，此編號搭配 Geolocation.clearWatch() 函式，即可停止更新使用者的位置。
 
 ******
 
 ## 22 - Follow Along Link Highlighter
+★不需要資料管理，沒有使用vue框架 ★
 
 [Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
 用於返回元素的大小和相對於視口的位置，回傳值是一個物件，包含width、height、x、y、top、right、bottom、left
@@ -651,18 +695,25 @@ getCurrentPosition()
 -----
 
 ## 23 - Speech Synthesis
+★不需要資料管理，沒有使用vue框架 ★
 
-語音閱讀
+語音閱讀 API，IE不支援
+
+new SpeechSynthesisUtterance()
+[SpeechSynthesisUtterance___MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/SpeechSynthesisUtterance)
+Speech 言語、Synthesis 合成、Utterance 發聲/表達/說話
+
+
+[voice屬性](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/voice)、[cancel()方法](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/cancel)、[speak()方法](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/speak)
+
+接口的voice屬性 SpeechSynthesisUtterance獲取和設置將用於說出話語的聲音
+
+接口的cancel()方法SpeechSynthesis從話語隊列中移除所有話語。如果當前正在說話，說話將立即停止。
 
 voiceschanged 事件
 
 getVoices( )、speak( )、cancel( )
 
-new SpeechSynthesisUtterance()
-
-get系列的選取器可以跑for迴圈或是想辦法轉成數組(Array.from...)
-
-偽元素、虛擬元素在JS沒辦法處理
 
 ```javascript
 //選取器使用方式參考
@@ -680,15 +731,20 @@ get系列的選取器可以跑for迴圈或是想辦法轉成數組(Array.from...
   options.forEach(option => option.addEventListener('change', setOption));
 ```
 
+【其他】
+get系列的選取器可以跑for迴圈或是想辦法轉成數組(Array.from...)
+偽元素、虛擬元素在JS沒辦法處理
+
+
 ******
 
 ## 24 - Sticky Nav
+★不需要資料管理，沒有使用vue框架 ★
 
 ****
 
 ## 25 - Event Capture, Propagation, Bubbling and Once
-
-複習事件冒泡與事件捕獲，沒有使用Vue框架
+ ★ 複習事件冒泡與事件捕獲，沒有使用Vue框架 ★ 
 [EventTarget.addEventListener()__MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener)
 
 addEventListener() 第三個參數可以傳布林值或是物件(capture、once、passive、signal)。第三個參數預設值是false，即不使用事件捕獲。所以不設置的話addEventListener()都是走事件冒泡
@@ -705,16 +761,19 @@ e.target.className  VS  this.classList.value
 *****
 
 ## 26 - Stripe Follow Along Nav
-
-分2次加class，是為了互動動畫的節奏和層次和判斷是否加第２個class ( 狀態控制 )
+ ★不需要資料管理，沒有使用vue框架 ★
+分2次加class，是為了互動動畫的節奏和層次和判斷是否加第2個class ( 狀態控制 )
 
 ```javascript
 setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
 ```
+[CSSStyleDeclaration.setProperty()](https://developer.mozilla.org/zh-CN/docs/Web/API/CSSStyleDeclaration/setProperty)
 
+【其他】
 mouseover、mouseout=>targer ; mouseleave 、mouseented=>currtarger ( 沒辦法用委派的概念 ) 
 
 e.composedPath()
+
 
 *******
 
@@ -736,15 +795,19 @@ pageX不是用絕對座標
 *******
 
 ## 28 - Video Speed Controller
-
 0-1範圍調整公式：（0-1）* ( 大 - 小 )  + 小
+[Number.prototype.toFixed()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+toFixed(num) 方法會使用定點小數表示法（fixed-point notation）來格式化數字。
+num 顯示數值至多少個小數點，範圍由0到20之間
 
-SOLID原則
 
 **********
+
 
 ## 29 - Countdown Timer
 
 ********
 
+
 ## 30 - Whack A Mole
+[Event.isTrusted___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Event/isTrusted)
