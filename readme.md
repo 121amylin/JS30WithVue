@@ -778,7 +778,6 @@ e.composedPath()
 *******
 
 ## 27 - Click and Drag
-
 拖曳狀態處理：計算相對地移動
 1.開始（按下mousedown）
 2.進行中 ( mousemove)
@@ -811,3 +810,4 @@ num 顯示數值至多少個小數點，範圍由0到20之間
 
 ## 30 - Whack A Mole
 [Event.isTrusted___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Event/isTrusted)
+用proxy概念實作資料驅動畫面 
