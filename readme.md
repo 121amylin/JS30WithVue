@@ -784,8 +784,7 @@ e.composedPath()
 3.結束 ( mouseup、mouseleave )
 
 
-
-pageX不是用絕對座標
+pageX不適用絕對座標
 
 手機要用touch系列 ( touchstart、touchmove、touchen  d )
 
