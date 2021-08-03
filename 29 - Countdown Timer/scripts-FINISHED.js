@@ -50,5 +50,5 @@ document.customForm.addEventListener('submit', function (e) {
   const mins = this.minutes.value; //取value
   console.log(mins);
   timer(mins * 60); //將value換成秒數，並開始計時器
-  this.reset();
+  this.reset();//重置
 });

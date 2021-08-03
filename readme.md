@@ -817,6 +817,19 @@ document.customForm.addEventListener('submit', function (e) {
 });
 
 ```
+【時間處理】
++new Date() 相當於 Date.now() 相當於 new Data().getTime() 相當於 new Data().valueOf() 相當於 new Date()*1
+Date.now() 靜態函數(方法)
+
+[直播範例](https://codepen.io/achen224/pen/JjoJrEz)
+
+【其他】
+vsCode套件：CodeMetrics
+做動畫效果的更新時間可以設 16 或 17 (1000/60)
+一個好的測試function建議15~20行
+switch case的簡化方式，用map對應
+
+[requestAnimationFrame](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame)依照硬體的更新頻率
 
 
 [Document.forms___MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/forms)
