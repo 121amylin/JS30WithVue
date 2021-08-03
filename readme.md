@@ -804,6 +804,48 @@ num 顯示數值至多少個小數點，範圍由0到20之間
 
 ## 29 - Countdown Timer
 
+直接由<form>的name獲取元素
+```HTML
+<form name="customForm" id="custom">
+  <input type="text" name="minutes" placeholder="Enter Minutes" />
+</form>
+```
+
+```javascript
+document.customForm.addEventListener('submit', function (e) {
+...
+});
+
+```
+
+
+[Document.forms___MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/forms)
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>document.forms example</title>
+</head>
+
+<body>
+
+<form name="login">
+  <input name="email" type="email">
+  <input name="password" type="password">
+  <button type="submit">Log in</button>
+</form>
+
+<script>
+  var loginForm = document.forms.login; // Or document.forms['login']
+  loginForm.elements.email.placeholder = 'test@example.com';
+  loginForm.elements.password.placeholder = 'password';
+</script>
+</body>
+</html>
+```
+
+
+
 ********
 
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Countdown Timer</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="timer" id="app">
+      <div class="timer__controls">
+        <button
+          class="timer__button"
+          v-for="item in timer_Item"
+          :key="item.id"
+          @click="timerHandle(item.time)"
+        >
+          {{item.text}}
+        </button>
+        <form name="customForm" id="custom" @submit.prevent="inputHandle">
+          <input type="text" name="minutes" placeholder="Enter Minutes" v-model='inputTime' />
+        </form>
+      </div>
+      <div class="display">
+        <h1 class="display__time-left">{{countdownTime_M}}{{countdownTime_S}}</h1>
+        <p class="display__end-time" v-if="setTime">
+          Be Back At {{atTime_H}}{{atTime_M}}
+        </p>
+      </div>
+    </div>
+    <script src="../common/vue.js"></script>
+    <script src="scripts-START.js"></script>
+  </body>
+</html>
