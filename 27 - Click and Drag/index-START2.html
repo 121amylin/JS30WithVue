@@ -11,14 +11,14 @@
       class="items"
       ref="listBox"
       :class="{active:canDrag}"
-      @mousedown="staryHandle"
-      @mouseup="startDrag"
-      @mouseleave="startDrag"
-      @mousemove="dragIng"
+      @mousedown="startDrag"
+      @mouseup="stopDrag"
+      @mouseleave="stopDrag"
+      @mousemove="dragHandler"
     >
       <div class="item" v-for="item in 25" :class="`item${item}`">{{item}}</div>
     </div>
     <script src="../common/vue.js"></script>
-    <script src="main.js"></script>
+    <script src="main2.js"></script>
   </body>
 </html>
