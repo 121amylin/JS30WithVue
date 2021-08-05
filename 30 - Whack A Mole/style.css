@@ -20,7 +20,13 @@ h1 {
   line-height: 1;
   margin-bottom: 0;
 }
-
+button{
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 30px;
+}
 .score {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
