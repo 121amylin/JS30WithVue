@@ -865,3 +865,13 @@ switch case的簡化方式，用map對應
 ## 30 - Whack A Mole
 [Event.isTrusted___MDN](https://developer.mozilla.org/zh-TW/docs/Web/API/Event/isTrusted)
 用proxy概念實作資料驅動畫面 
+
+
+
+********
+## 【其他】 
+- [A New Vue On JavaScript30](https://github.com/davefollett/JavaScript30/blob/master/readme.md)
+- [anewvueonjs30](https://dev.to/t/anewvueonjs30)
+- [深入淺出 Javascript30 快速導覽](https://www.youtube.com/playlist?list=PLEfh-m_KG4dYbxVoYDyT_fmXZHnuKg2Fq)
+
+
